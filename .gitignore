@@ -39,6 +39,11 @@ output/
 # Vercel
 .vercel
 
+# Product / planning (internal only)
+.prodman/
+ProductPlan.md
+docs/internal/
+
 # Misc
 *.pem
 *.log
