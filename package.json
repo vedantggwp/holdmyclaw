@@ -1,0 +1,25 @@
+{
+  "name": "holdmyclaw",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "npm run dev --workspace=packages/web",
+    "build": "npm run build --workspace=packages/core && npm run build --workspace=packages/web",
+    "build:cli": "npm run build --workspace=packages/core && npm run build --workspace=packages/cli",
+    "test": "vitest run",
+    "test:e2e": "playwright test",
+    "lint": "eslint packages/*/src"
+  },
+  "devDependencies": {
+    "typescript": "^5.7",
+    "vitest": "^3.0",
+    "@playwright/test": "^1.50",
+    "tsup": "^8.0",
+    "eslint": "^9.0"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}

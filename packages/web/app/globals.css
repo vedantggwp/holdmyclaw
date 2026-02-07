@@ -1,0 +1,16 @@
+@import "tailwindcss";
+
+/* ProductPlan: Kinetic Minimalism — design tokens */
+@theme {
+  --color-background: #ffffff;
+  --color-foreground: #111111;
+  --color-muted: #6b7280;
+  --color-accent-indigo: #4f46e5;
+  --color-accent-emerald: #10b981;
+  --color-accent-amber: #f59e0b;
+  --color-border: #e5e7eb;
+  --color-code-bg: #f9fafb;
+
+  --font-sans: ui-sans-serif, system-ui, sans-serif;
+  --font-mono: ui-monospace, "JetBrains Mono", Menlo, monospace;
+}
