@@ -23,3 +23,34 @@ export interface ServerStatus {
   elapsed: number;
   timedOut: boolean;
 }
+
+/** Input for cloud deployment (API / deploy pipeline). */
+export interface DeployInputCloud {
+  provider: CloudProviderId;
+  providerApiKey: string;
+  region?: string;
+  llmProvider: LLMProvider;
+  llmApiKey: string;
+  channel: Channel;
+  channelToken: string;
+  sshPublicKey: string;
+  personality?: string;
+  agentName?: string;
+  agentEmoji?: string;
+  dmPolicy?: "pairing" | "open";
+  skills?: string[];
+}
+
+/** Input for local Docker (file generation only). */
+export interface DeployInputLocal {
+  target: "local";
+  llmProvider: LLMProvider;
+  llmApiKey: string;
+  channel: Channel;
+  channelToken: string;
+  personality?: string;
+  agentName?: string;
+  agentEmoji?: string;
+  dmPolicy?: "pairing" | "open";
+  skills?: string[];
+}

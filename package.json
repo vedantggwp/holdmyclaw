@@ -13,11 +13,12 @@
     "lint": "eslint packages/*/src"
   },
   "devDependencies": {
-    "typescript": "^5.7",
-    "vitest": "^3.0",
+    "@axe-core/playwright": "^4.11.1",
     "@playwright/test": "^1.50",
+    "eslint": "^9.0",
     "tsup": "^8.0",
-    "eslint": "^9.0"
+    "typescript": "^5.7",
+    "vitest": "^3.0"
   },
   "engines": {
     "node": ">=22"

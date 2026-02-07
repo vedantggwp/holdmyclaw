@@ -40,27 +40,27 @@ npm run build
 
 | Path | Purpose |
 |------|---------|
-| `packages/core` | Shared provisioning logic (`@holdmyclaw/core`) — types, providers, cloud-init, validation (to be built out) |
+| `packages/core` | Shared provisioning logic (`@holdmyclaw/core`) — providers, cloud-init, validation, provision, SSH keygen |
 | `packages/web` | Next.js 15 app — landing page, setup wizard, guide, FAQ |
-| `packages/cli` | CLI `npx holdmyclaw` (planned; not yet scaffolded) |
+| `packages/cli` | CLI `holdmyclaw` — commander + @inquirer/prompts, cloud + local deploy (same core pipeline) |
 | `guides/` | Inline wizard tutorials + post-setup “Managing Your OpenClaw” guide |
 | `templates/` | Cloud-init script, Docker Compose, OpenClaw config templates |
 | `.prodman/` | Product management — product definition, roadmap, epics, specs |
-| `docs/internal/` | Internal notes, progress log, strengths/weaknesses |
+| `docs/internal/` | Internal notes, **progress log (what’s done / not done / what’s left)** |
 
 ---
 
 ## Current status
 
-- **Phase 1 (Foundation)** — Done  
-  - Git initialized (branch `main`), `.gitignore` in place  
-  - Monorepo: npm workspaces, `tsconfig.base.json`  
-  - `packages/core`: scaffolded with tsup, shared types only  
-  - `packages/web`: Next.js 15 + Tailwind 4, placeholder hero (wordmark, CTA, terminal block placeholder), routes `/`, `/guide`, `/faq`, `/setup`  
-  - Design tokens in `app/globals.css` per ProductPlan (Kinetic Minimalism)  
-  - Domain **holdmyclaw.com** registered  
+**Phases 1–4 complete.** Phase 5 (content & polish) and Phase 6 (launch) remain.
 
-- **Next:** Phase 2 (Core pipeline) — provider adapters, cloud-init, validation, provision pipeline. See [ProductPlan.md Part 8](./ProductPlan.md) and [docs/internal/setup-and-progress.md](./docs/internal/setup-and-progress.md).
+- **Phase 1 (Foundation)** — Done: monorepo, core scaffold, web placeholder, domain registered.
+- **Phase 2 (Core pipeline)** — Done: Hetzner/DigitalOcean adapters, cloud-init, provision, validate, tests.
+- **Phase 3 (Web wizard)** — Done: API routes (deploy, status, validate), wizard steps, SSH keygen browser, setup flow.
+- **Phase 4 (CLI)** — Done: `packages/cli` with commander + @inquirer/prompts, cloud + local deploy, smoke test. Not yet published to npm.
+- **Next:** Phase 5 (content & polish) — guide content, FAQ, full landing, mascot, animations, E2E tests.
+
+**Single source for “what’s done / not done / what’s left”:** [docs/internal/setup-and-progress.md](./docs/internal/setup-and-progress.md). It includes a status table, deferred items, and next steps.
 
 ---
 
@@ -70,8 +70,8 @@ npm run build
 |---------|-------------|
 | `npm run dev` | Start Next.js dev server (web app) |
 | `npm run build` | Build `@holdmyclaw/core` then Next.js app |
-| `npm run build:cli` | Build core + CLI (when CLI exists) |
-| `npm test` | Run unit tests (Vitest; when added) |
+| `npm run build:cli` | Build core + CLI |
+| `npm test` | Run unit tests (Vitest) |
 | `npm run test:e2e` | Run E2E tests (Playwright; when added) |
 | `npm run lint` | Lint package sources |
 
@@ -85,4 +85,4 @@ npm run build
 | [AGENTS.md](./AGENTS.md) | Instructions for AI agents: epic workflow, .prodman layout, verification, issue logging |
 | [.prodman/product.yaml](./.prodman/product.yaml) | Product definition: vision, principles, target users |
 | [.prodman/roadmap.yaml](./.prodman/roadmap.yaml) | Milestones and releases (epic-driven) |
-| [docs/internal/setup-and-progress.md](./docs/internal/setup-and-progress.md) | Implementation log: what’s been done, decisions, next steps |
+| [docs/internal/setup-and-progress.md](./docs/internal/setup-and-progress.md) | **Implementation log: what’s done, what’s not done, what’s left** — status table, deferred items, next steps (Phase 5 & 6) |
