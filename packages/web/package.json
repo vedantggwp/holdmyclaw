@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "npm run build:core && next build",
+    "build:core": "cd ../.. && npm run build --workspace=packages/core",
     "start": "next start",
     "lint": "next lint"
   },

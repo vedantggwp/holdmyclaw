@@ -7,7 +7,8 @@ import { NextResponse } from "next/server";
 import { provisionCloud, type LLMProvider, type Channel } from "@holdmyclaw/core";
 import { loadCloudInitTemplate, loadConfigTemplate } from "../../../lib/server/load-templates";
 
-export const maxDuration = 30;
+/** Vercel Hobby limit is 10s; Pro allows 60s. Provider create-server is typically 1–5s. */
+export const maxDuration = 10;
 
 interface DeployBody {
   provider?: string;
