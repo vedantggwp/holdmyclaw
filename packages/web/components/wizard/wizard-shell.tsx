@@ -158,7 +158,7 @@ function getCurrentStep(state: WizardState): StepDef {
         ),
       canNext: () => true,
       showNext: true,
-      hideNextButton: true,
+      hideNextButton: state.deployTarget === "cloud",
     },
     6: {
       component: (s, d, next, back) =>

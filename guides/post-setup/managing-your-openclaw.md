@@ -416,6 +416,15 @@ scp -i path/to/your-key.pem openclaw@YOUR_SERVER_IP:/opt/openclaw/config/opencla
 
 Here are the most common issues and how to fix them.
 
+### Docker image won't download (local setup)
+
+If you chose **My Computer** and ran `docker compose up -d`, errors like **"failed to copy"** or **EOF** while pulling the container image are usually temporary network or registry hiccups.
+
+1. **Try again.** In the same folder, run `docker compose up -d` again. Often the second run succeeds.
+2. **Check your connection.** Make sure your internet is stable and that Docker Desktop is running.
+3. **Try again later.** The image host (GitHub Container Registry) can be briefly slow; waiting a few minutes and retrying often works.
+4. **VPN.** If you use a VPN, try without it once (or the opposite) to rule out blocking.
+
 ### Agent Not Responding to Messages
 
 **Step 1:** Check your Dashboard (`http://YOUR_SERVER_IP:18789`). Does it load? If yes, your server is running. Look at the agent status and channel connections.
