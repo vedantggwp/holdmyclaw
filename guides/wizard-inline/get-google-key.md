@@ -63,10 +63,7 @@ Google makes an AI model called **Gemini** (you might have heard of "Google Bard
 
 ## Step 5: Copy Your API Key
 
-1. Your new API key will be displayed on the screen. It's a string of letters and numbers — something like:
-   ```
-   AIzaSyA1b2C3d4E5f6G7h8I9j0K1l2M3n4O5p6Q
-   ```
+1. Your new API key will be displayed on the screen. It's a long string of letters and numbers. Copy the whole thing — never share it.
 
 2. Click the **"Copy"** button (clipboard icon) next to the key.
 
