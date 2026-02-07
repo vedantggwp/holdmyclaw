@@ -1,6 +1,7 @@
 {
   "name": "@holdmyclaw/web",
   "version": "0.0.1",
+  "description": "HoldMyClaw web app: landing page, setup wizard, guide, FAQ. Next.js 15 + Tailwind 4.",
   "private": true,
   "scripts": {
     "dev": "next dev",

@@ -2,7 +2,7 @@
 
 Deploy OpenClaw from the terminal. Same provisioning pipeline as the web wizard (`@holdmyclaw/core`).
 
-## Run (from repo root)
+## Run (from repository root)
 
 ```bash
 # Build core + CLI
@@ -33,9 +33,9 @@ When published to npm: `npx holdmyclaw`.
 | `templates/` | Cloud-init.sh + configs/*.json5 (shipped with package for `npx`) |
 | `__tests__/cli.test.ts` | Smoke test: `--version`, `--help` |
 
-## Not done
+## Roadmap
 
-- **Publish to npm** — run `npm publish` from `packages/cli` when ready.
-- Live LLM API validation in CLI (only format validation); web uses `/api/validate` for live checks.
+- **npm publish:** CLI will be published to npm when ready; run `npm publish` from `packages/cli`.
+- **Live LLM validation:** CLI currently validates key format only; the web app uses `/api/validate` for live API checks.
 
-See [docs/internal/setup-and-progress.md](../../docs/internal/setup-and-progress.md) for full project status.
+Full project status: [docs/internal/setup-and-progress.md](../../docs/internal/setup-and-progress.md).

@@ -8,9 +8,10 @@ Use this checklist before and during deployment.
 
 ### 1. Monorepo build (Root Directory)
 
-- In Vercel: **Project Settings → General → Root Directory** = `packages/web`.
+- **Root Directory:** In Vercel **Project Settings → General**, set to `packages/web`.
+- **Critical:** In the same **Root Directory** section, enable **"Include source files outside of the Root Directory in the Build Step"**. Without this, Vercel only sends `packages/web` to the builder and `@holdmyclaw/core` (in `packages/core`) cannot be resolved — you get "Module not found: Can't resolve '@holdmyclaw/core'".
 - **Build:** `packages/web`’s build script runs `build:core` then `next build`. `build:core` runs from repo root and builds `@holdmyclaw/core`, so the default Vercel “npm run build” does the right thing without a custom Build Command.
-- **Install:** Ensure install runs from repo root (Vercel’s default for monorepos) so workspaces are linked and `@holdmyclaw/core` is available.
+- **Install Command:** Set to `cd ../.. && npm install` so install runs from the repository root. (Default install in `packages/web` only would miss the core package.)
 
 ### 2. Environment variables
 
@@ -38,12 +39,12 @@ No API keys or secrets are needed for the app itself (users supply their own key
 
 ## While deploying (Vercel UI)
 
-1. **Import** the repo (GitHub/GitLab/Bitbucket).
-2. **Root Directory:** set to `packages/web`.
-3. **Framework Preset:** Vercel should detect Next.js; leave as is.
-4. **Build Command:** leave as **npm run build** (the web package builds core first via `build:core`, then runs `next build`).
-5. **Output Directory:** leave default (Next.js uses `.next`).
-6. **Environment Variables:** add `NEXT_PUBLIC_SITE_URL` if you use a custom domain.
+1. **Import** the repository (GitHub, GitLab, or Bitbucket).
+2. **Root Directory:** `packages/web`. Enable **Include source files outside of the Root Directory in the Build Step** (same section).
+3. **Install Command:** `cd ../.. && npm install` (required for monorepo).
+4. **Build Command:** `npm run build`.
+5. **Framework Preset:** Next.js (auto-detected). **Output Directory:** default (`.next`).
+6. **Environment Variables:** add `NEXT_PUBLIC_SITE_URL` for a custom domain.
 7. Deploy.
 
 ---

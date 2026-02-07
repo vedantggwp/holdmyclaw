@@ -1,5 +1,6 @@
 {
   "name": "holdmyclaw",
+  "description": "Free setup wizard for OpenClaw. Deploy on your own cloud server or locally with Docker. Your server, your data, completely free.",
   "private": true,
   "workspaces": [
     "packages/*"

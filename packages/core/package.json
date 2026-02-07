@@ -1,6 +1,7 @@
 {
   "name": "@holdmyclaw/core",
   "version": "0.0.1",
+  "description": "Shared provisioning logic for HoldMyClaw: cloud providers, cloud-init, validation, provision, SSH keygen.",
   "type": "module",
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
